@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ConectaAleatório - Bate-papo por vídeo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__eyebrow">ConectaAleatório</p>
+          <h1>Bate-papo por vídeo aleatório</h1>
+          <p class="app__subtitle">
+            Encontre alguém online agora mesmo e inicie uma conversa por vídeo em segundos.
+          </p>
+        </div>
+        <div class="status">
+          <span class="status__dot" aria-hidden="true"></span>
+          <div>
+            <p class="status__label">Status</p>
+            <p id="statusText" class="status__value">Pronto para conectar</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel">
+          <div class="panel__header">
+            <h2>Você</h2>
+            <span id="localBadge" class="badge badge--offline">Câmera desligada</span>
+          </div>
+          <div class="video-shell">
+            <video id="localVideo" playsinline muted></video>
+            <div id="localOverlay" class="overlay">
+              <p>Ative sua câmera para entrar na fila.</p>
+              <button id="enableCamera" class="button button--ghost">Ativar câmera</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <h2>Conexão aleatória</h2>
+            <span id="remoteBadge" class="badge badge--offline">Sem conexão</span>
+          </div>
+          <div class="video-shell">
+            <video id="remoteVideo" playsinline></video>
+            <div id="remoteOverlay" class="overlay">
+              <p id="remoteMessage">Clique em “Encontrar alguém” para começar.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="controls">
+        <div class="controls__left">
+          <button id="matchButton" class="button" disabled>Encontrar alguém</button>
+          <button id="skipButton" class="button button--ghost" disabled>Pular</button>
+          <button id="endButton" class="button button--danger" disabled>Encerrar</button>
+        </div>
+        <div class="controls__right">
+          <div class="stat">
+            <p class="stat__label">Pessoas online agora</p>
+            <p id="onlineCount" class="stat__value">0</p>
+          </div>
+          <div class="stat">
+            <p class="stat__label">Tempo conectado</p>
+            <p id="callTimer" class="stat__value">00:00</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="notes">
+        <h3>Como funciona</h3>
+        <ul>
+          <li>Ative sua câmera e microfone para entrar na fila.</li>
+          <li>O sistema busca alguém online ao mesmo tempo e cria a conexão.</li>
+          <li>Use “Pular” para trocar de pessoa instantaneamente.</li>
+        </ul>
+        <p class="notes__disclaimer">
+          Demonstração de interface: a conexão aleatória é simulada localmente para ilustrar
+          o fluxo de uma plataforma real.
+        </p>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
